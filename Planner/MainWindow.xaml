@@ -9,7 +9,8 @@
     <Grid>
         <Button Content="Button" HorizontalAlignment="Left" Margin="165,123,0,0" VerticalAlignment="Top" Click="Button_Click"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="455,168,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="234,324,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="455,168,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="234,324,0,0" VerticalAlignment="Top" Width="200"/>
 
     </Grid>
 </Window>
