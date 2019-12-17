@@ -4,17 +4,51 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Planner"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindow" Height="900" Width="1600">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="115"/>
+            <RowDefinition Height="120"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Content="--Menu--" HorizontalAlignment="Left" Margin="68,43,0,0" VerticalAlignment="Top" Height="34" Width="95"/>
-        <Button Content="--Today--" HorizontalAlignment="Left" Margin="301,60,0,0" VerticalAlignment="Top"/>
-        <Button Content="--Back--" HorizontalAlignment="Left" Margin="421,70,0,0" VerticalAlignment="Top"/>
-        <Button Content="--Next--" HorizontalAlignment="Left" Margin="529,43,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="665,60,0,0" Text="Month" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="72"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Button BorderThickness="0" Content="Today" FontSize="20"  Background="White" materialDesign:ButtonAssist.CornerRadius="25"  Foreground="Silver" HorizontalAlignment="Left" Height="50" Width="120" Margin="60, 35" VerticalAlignment="Top"/>
+                <Button BorderThickness="0" Background="Silver" materialDesign:ButtonAssist.CornerRadius="25" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="50" Width="50" Margin="200, 35">
+                    <materialDesign:PackIcon HorizontalAlignment="Center"
+                        Kind="KeyboardArrowLeft"
+                        Height="24"
+                        Width="24" />
+                </Button>
+                <Button Background="Silver" BorderThickness="0" materialDesign:ButtonAssist.CornerRadius="25" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="50" Width="50" Margin="260, 35">
+                    <materialDesign:PackIcon HorizontalAlignment="Center"
+                        Kind="KeyboardArrowRight"
+                        Height="24"
+                        Width="24" />
+                </Button>
+                <TextBlock FontSize="30" Foreground="Silver" HorizontalAlignment="Left" Margin="360, 35" Text="December 2019" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"/>
+            </Grid>
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="110"/>
+                    <RowDefinition Height="360"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button BorderThickness="0" Content="Add event" FontSize="20" BorderBrush="DeepPink" Background="White" materialDesign:ButtonAssist.CornerRadius="30"  Foreground="DeepPink" HorizontalAlignment="Center" Height="60" Width="200" VerticalAlignment="Center"/>
+                <Calendar HorizontalAlignment="Center" Background="White" Grid.Row="1"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
