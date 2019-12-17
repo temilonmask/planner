@@ -5,13 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Planner"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="900" Width="1600">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="165,123,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="455,168,0,0" VerticalAlignment="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="165,324,0,0" VerticalAlignment="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="455,168,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="234,324,0,0" VerticalAlignment="Top" Width="200"/>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="115"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="--Menu--" HorizontalAlignment="Left" Margin="68,43,0,0" VerticalAlignment="Top" Height="34" Width="95"/>
+        <Button Content="--Today--" HorizontalAlignment="Left" Margin="301,60,0,0" VerticalAlignment="Top"/>
+        <Button Content="--Back--" HorizontalAlignment="Left" Margin="421,70,0,0" VerticalAlignment="Top"/>
+        <Button Content="--Next--" HorizontalAlignment="Left" Margin="529,43,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="665,60,0,0" Text="Month" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="72"/>
     </Grid>
 </Window>
