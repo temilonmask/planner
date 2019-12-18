@@ -6,9 +6,10 @@ using Newtonsoft.Json;
 
 namespace Planner.Core
 {
-    class Planner
+    public class Plan
     {
-        public Planner()
+        private List<Event> Events = new List<Event>();
+        public Plan()
         {
             LoadData();
         }
@@ -18,7 +19,6 @@ namespace Planner.Core
             Events.Add(_event);
         }
 
-        private List<Event> Events = new List<Event>();
         private T Deserialize<T>(string fileName)
         {
             using (var sr = new StreamReader(fileName))
@@ -43,7 +43,7 @@ namespace Planner.Core
             }
         }
 
-        private const string EventsFileName = "../../../../../Planner/data/Events.json";
+        private const string EventsFileName = "../../../../../../Planner.Core/Data/Events";
 
 
         private void LoadData()

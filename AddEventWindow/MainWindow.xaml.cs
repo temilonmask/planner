@@ -12,9 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Planner.Core;
 
-namespace Planner
+namespace AddEventWindow
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,13 +22,7 @@ namespace Planner
     {
         public MainWindow()
         {
-            Plan plan = new Plan();
             InitializeComponent();
-        }
-
-        private void AddEventButtonClick(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

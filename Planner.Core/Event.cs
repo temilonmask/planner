@@ -11,13 +11,5 @@ namespace Planner.Core
         public DateTime StartDt { get; set; }
         public DateTime EndDt { get; set; }
         public string Tag { get; set; }
-        public Event(string name, string description, DateTime startDt, DateTime endDt, string tag)
-        {
-            Name = name;
-            Description = description;
-            StartDt = startDt;
-            EndDt = endDt;
-            Tag = tag;
-        }
     }
 }

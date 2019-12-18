@@ -46,7 +46,7 @@
                     <RowDefinition Height="360"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button BorderThickness="0" Content="Add event" FontSize="20" BorderBrush="DeepPink" Background="White" materialDesign:ButtonAssist.CornerRadius="30"  Foreground="DeepPink" HorizontalAlignment="Center" Height="60" Width="200" VerticalAlignment="Center"/>
+                <Button BorderThickness="0" Content="Add event" FontSize="20" BorderBrush="DeepPink" Background="White" materialDesign:ButtonAssist.CornerRadius="30"  Foreground="DeepPink" HorizontalAlignment="Center" Height="60" Width="200" VerticalAlignment="Center" Click="AddEventButtonClick"/>
                 <Calendar HorizontalAlignment="Center" Background="White" Grid.Row="1"/>
             </Grid>
         </Grid>
