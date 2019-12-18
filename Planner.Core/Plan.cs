@@ -11,7 +11,7 @@ namespace Planner.Core
         private List<Event> Events = new List<Event>();
         public Plan()
         {
-            LoadData();
+            //LoadData();
         }
 
         public void AddEvent(Event _event)

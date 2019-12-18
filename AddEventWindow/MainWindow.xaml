@@ -8,6 +8,12 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="MainWindow" Height="349" Width="442">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
     </Grid>
 </Window>
