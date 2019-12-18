@@ -18,20 +18,20 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1">
-                <Button BorderThickness="0" Content="Today" FontSize="16"  Background="White" materialDesign:ButtonAssist.CornerRadius="17"  Foreground="RoyalBlue" HorizontalAlignment="Left" Height="34" Width="90" Margin="60, 0" VerticalAlignment="Center"/>
-                <Button Style="{StaticResource MaterialDesignIconButton}" Background="White"  materialDesign:ButtonAssist.CornerRadius="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="50" Width="50" Margin="187, 0">
+                <Button BorderThickness="0" Content="Today" FontSize="16"  Background="White" materialDesign:ButtonAssist.CornerRadius="17"  Foreground="RoyalBlue" HorizontalAlignment="Left" Height="34" Width="90" Margin="60, 0" VerticalAlignment="Center" Click="TodayButton_Click"/>
+                <Button Style="{StaticResource MaterialDesignIconButton}" Background="White"  materialDesign:ButtonAssist.CornerRadius="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="50" Width="50" Margin="187, 0" Click="PastButton_Click">
                     <materialDesign:PackIcon HorizontalAlignment="Center" Foreground="RoyalBlue"
                         Kind="KeyboardArrowLeft"
                         Height="40"
                         Width="35" VerticalAlignment="Center" />
                 </Button>
-                <Button Style="{StaticResource MaterialDesignIconButton}" Background="White"  materialDesign:ButtonAssist.CornerRadius="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="50" Width="50" Margin="238, 0">
+                <Button Style="{StaticResource MaterialDesignIconButton}" Background="White"  materialDesign:ButtonAssist.CornerRadius="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="50" Width="50" Margin="238, 0" Click="NextButton_Click">
                     <materialDesign:PackIcon HorizontalAlignment="Center" Foreground="RoyalBlue"
                         Kind="KeyboardArrowRight"
                         Height="35"
                         Width="35" />
                 </Button>
-                <TextBlock FontSize="30" Foreground="Silver" HorizontalAlignment="Left" Margin="320, 38" Text="December 2019" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock Name="Month" FontSize="30" Foreground="Silver" HorizontalAlignment="Left" Margin="320, 38" Text="December 2019" TextWrapping="Wrap" TextAlignment="Center"/>
             </Grid>
 
         </Grid>
@@ -76,13 +76,13 @@
                     <TextBlock Grid.Column="4" Text="ПТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
                     <TextBlock Grid.Column="5" Text="СБ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
                     <TextBlock Grid.Column="6" Text="ВС" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Row="1" Text="1" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Text="2" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Row="1" Grid.Column="2" Text="3" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Row="1" Grid.Column="3" Text="4" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Row="1" Grid.Column="4" Text="5" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Row="1" Grid.Column="5" Text="6" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Row="1" Grid.Column="6" Text="7" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Name="Monday" Grid.Row="1" Text="1" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Name="Tuesday" Grid.Row="1" Grid.Column="1" Text="2" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Name="Wednesday"  Grid.Row="1" Grid.Column="2" Text="3" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Name="Thursday" Grid.Row="1" Grid.Column="3" Text="4" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Name="Friday" Grid.Row="1" Grid.Column="4" Text="5" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Name="Saturday" Grid.Row="1" Grid.Column="5" Text="6" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Name="Sunday" Grid.Row="1" Grid.Column="6" Text="7" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
                 </Grid>
                 <ScrollViewer Grid.Row="1">
                 <Grid ShowGridLines="True" >
