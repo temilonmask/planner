@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Planner"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="1600">
+        Title="MainWindow" WindowStartupLocation="CenterScreen" WindowState="Maximized" Height="900" Width="1600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
@@ -18,20 +18,20 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1">
-                <Button BorderThickness="0" Content="Today" FontSize="20"  Background="White" materialDesign:ButtonAssist.CornerRadius="25"  Foreground="Silver" HorizontalAlignment="Left" Height="50" Width="120" Margin="60, 35" VerticalAlignment="Top"/>
-                <Button BorderThickness="0" Background="Silver" materialDesign:ButtonAssist.CornerRadius="25" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="50" Width="50" Margin="200, 35">
-                    <materialDesign:PackIcon HorizontalAlignment="Center"
+                <Button BorderThickness="0" Content="Today" FontSize="16"  Background="White" materialDesign:ButtonAssist.CornerRadius="17"  Foreground="RoyalBlue" HorizontalAlignment="Left" Height="34" Width="90" Margin="60, 0" VerticalAlignment="Center"/>
+                <Button Style="{StaticResource MaterialDesignIconButton}" Background="White"  materialDesign:ButtonAssist.CornerRadius="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="50" Width="50" Margin="187, 0">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" Foreground="RoyalBlue"
                         Kind="KeyboardArrowLeft"
-                        Height="24"
-                        Width="24" />
+                        Height="40"
+                        Width="35" VerticalAlignment="Center" />
                 </Button>
-                <Button Background="Silver" BorderThickness="0" materialDesign:ButtonAssist.CornerRadius="25" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="50" Width="50" Margin="260, 35">
-                    <materialDesign:PackIcon HorizontalAlignment="Center"
+                <Button Style="{StaticResource MaterialDesignIconButton}" Background="White"  materialDesign:ButtonAssist.CornerRadius="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="50" Width="50" Margin="238, 0">
+                    <materialDesign:PackIcon HorizontalAlignment="Center" Foreground="RoyalBlue"
                         Kind="KeyboardArrowRight"
-                        Height="24"
-                        Width="24" />
+                        Height="35"
+                        Width="35" />
                 </Button>
-                <TextBlock FontSize="30" Foreground="Silver" HorizontalAlignment="Left" Margin="360, 35" Text="December 2019" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock FontSize="30" Foreground="Silver" HorizontalAlignment="Left" Margin="320, 38" Text="December 2019" TextWrapping="Wrap" TextAlignment="Center"/>
             </Grid>
 
         </Grid>
@@ -39,6 +39,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="350"/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="30"/>
             </Grid.ColumnDefinitions>
             <Grid>
                 <Grid.RowDefinitions>
@@ -46,8 +47,82 @@
                     <RowDefinition Height="360"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button BorderThickness="0" Content="Add event" FontSize="20" BorderBrush="DeepPink" Background="White" materialDesign:ButtonAssist.CornerRadius="30"  Foreground="DeepPink" HorizontalAlignment="Center" Height="60" Width="200" VerticalAlignment="Center" Click="AddEventButtonClick"/>
-                <Calendar HorizontalAlignment="Center" Background="White" Grid.Row="1"/>
+                <Button BorderThickness="0" Content="+  Add event" FontSize="20" BorderBrush="DeepPink" Background="White" materialDesign:ButtonAssist.CornerRadius="30"  Foreground="DeepPink" HorizontalAlignment="Center" Height="60" Width="200" VerticalAlignment="Center" Click="AddEventButtonClick"/>
+                <Calendar BorderThickness="0"  BorderBrush="RoyalBlue"  Foreground="RoyalBlue" HorizontalAlignment="Center" Background="White" Grid.Row="1"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="ПН" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Column="1" Text="ВТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Column="2" Text="СР" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Column="3" Text="ЧТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Column="4" Text="ПТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Column="5" Text="СБ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Column="6" Text="ВС" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Row="1" Text="1" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="2" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="3" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Row="1" Grid.Column="3" Text="4" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Row="1" Grid.Column="4" Text="5" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Row="1" Grid.Column="5" Text="6" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Row="1" Grid.Column="6" Text="7" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                </Grid>
+                <ScrollViewer Grid.Row="1">
+                <Grid ShowGridLines="True" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+                </ScrollViewer>
             </Grid>
         </Grid>
     </Grid>
