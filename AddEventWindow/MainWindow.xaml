@@ -8,6 +8,24 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="MainWindow" Height="349" Width="442">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="107*"/>
+            <ColumnDefinition Width="114*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox FontSize="20" Name="CommentTextBox" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Добавтье название" Foreground="Black" Margin="36,0,35,0" Grid.ColumnSpan="2"/>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0">
+            <DatePicker Width="100" materialDesign:HintAssist.Hint="Дата начала" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+            <materialDesign:TimePicker materialDesign:HintAssist.Hint="Время начала" Is24Hours="True" Name="StartTimePicker" Width="100"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
+            <DatePicker Width="100" materialDesign:HintAssist.Hint="Дата окончания" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+            <materialDesign:TimePicker materialDesign:HintAssist.Hint="Время окончания" Is24Hours="True" Name="EndTimePicker" Width="100"/>
+        </StackPanel>
     </Grid>
 </Window>
