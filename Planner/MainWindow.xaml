@@ -48,7 +48,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Button BorderThickness="0" Content="+  Add event" FontSize="20" BorderBrush="DeepPink" Background="White" materialDesign:ButtonAssist.CornerRadius="30"  Foreground="DeepPink" HorizontalAlignment="Center" Height="60" Width="200" VerticalAlignment="Center" Click="AddEventButtonClick"/>
-                <Calendar BorderThickness="0"  BorderBrush="RoyalBlue"  Foreground="RoyalBlue" HorizontalAlignment="Center" Background="White" Grid.Row="1"/>
+                <Calendar SelectedDatesChanged="DateChanged" Name="DatePicker" BorderThickness="0"  BorderBrush="RoyalBlue"  Foreground="RoyalBlue" HorizontalAlignment="Center" Background="White" Grid.Row="1"/>
             </Grid>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
@@ -57,6 +57,7 @@
                 </Grid.RowDefinitions>
                 <Grid>
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -64,64 +65,98 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
+                        <ColumnDefinition Width="17"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="35"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="ПН" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Column="1" Text="ВТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Column="2" Text="СР" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Column="3" Text="ЧТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Column="4" Text="ПТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Column="5" Text="СБ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Column="6" Text="ВС" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Name="Monday" Grid.Row="1" Text="1" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Name="Tuesday" Grid.Row="1" Grid.Column="1" Text="2" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Name="Wednesday"  Grid.Row="1" Grid.Column="2" Text="3" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Name="Thursday" Grid.Row="1" Grid.Column="3" Text="4" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Name="Friday" Grid.Row="1" Grid.Column="4" Text="5" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Name="Saturday" Grid.Row="1" Grid.Column="5" Text="6" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Name="Sunday" Grid.Row="1" Grid.Column="6" Text="7" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Column="1" Text="ПН" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Column="2" Text="ВТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Column="3" Text="СР" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Column="4" Text="ЧТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Column="5" Text="ПТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Column="6" Text="СБ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Grid.Column="7" Text="ВС" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Name="Monday" Grid.Row="1" Grid.Column="1" Text="1" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Name="Tuesday" Grid.Row="1" Grid.Column="2" Text="2" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Name="Wednesday"  Grid.Row="1" Grid.Column="3" Text="3" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Name="Thursday" Grid.Row="1" Grid.Column="4" Text="4" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Name="Friday" Grid.Row="1" Grid.Column="5" Text="5" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Name="Saturday" Grid.Row="1" Grid.Column="6" Text="6" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                    <TextBlock Name="Sunday" Grid.Row="1" Grid.Column="7" Text="7" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
                 </Grid>
                 <ScrollViewer Grid.Row="1">
-                <Grid ShowGridLines="True" >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                    </Grid.RowDefinitions>
-                </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <TextBlock FontSize="10" Text="01:00" Margin="0, 43, 0, 0"/>
+                            <TextBlock FontSize="10" Text="02:00" Margin="0, 93, 0, 0"/>
+                            <TextBlock FontSize="10" Text="03:00" Margin="0, 143, 0, 0"/>
+                            <TextBlock FontSize="10" Text="04:00" Margin="0, 193, 0, 0"/>
+                            <TextBlock FontSize="10" Text="05:00" Margin="0, 243, 0, 0"/>
+                            <TextBlock FontSize="10" Text="06:00" Margin="0, 293, 0, 0"/>
+                            <TextBlock FontSize="10" Text="07:00" Margin="0, 343, 0, 0"/>
+                            <TextBlock FontSize="10" Text="08:00" Margin="0, 393, 0, 0"/>
+                            <TextBlock FontSize="10" Text="09:00" Margin="0, 443, 0, 0"/>
+                            <TextBlock FontSize="10" Text="10:00" Margin="0, 493, 0, 0"/>
+                            <TextBlock FontSize="10" Text="11:00" Margin="0, 543, 0, 0"/>
+                            <TextBlock FontSize="10" Text="12:00" Margin="0, 593, 0, 0"/>
+                            <TextBlock FontSize="10" Text="13:00" Margin="0, 643, 0, 0"/>
+                            <TextBlock FontSize="10" Text="14:00" Margin="0, 693, 0, 0"/>
+                            <TextBlock FontSize="10" Text="15:00" Margin="0, 743, 0, 0"/>
+                            <TextBlock FontSize="10" Text="16:00" Margin="0, 793, 0, 0"/>
+                            <TextBlock FontSize="10" Text="17:00" Margin="0, 843, 0, 0"/>
+                            <TextBlock FontSize="10" Text="18:00" Margin="0, 893, 0, 0"/>
+                            <TextBlock FontSize="10" Text="19:00" Margin="0, 943, 0, 0"/>
+                            <TextBlock FontSize="10" Text="20:00" Margin="0, 993, 0, 0"/>
+                            <TextBlock FontSize="10" Text="21:00" Margin="0, 1043, 0, 0"/>
+                            <TextBlock FontSize="10" Text="22:00" Margin="0, 1093, 0, 0"/>
+                            <TextBlock FontSize="10" Text="23:00" Margin="0, 1143, 0, 0"/>
+                            <TextBlock FontSize="10" Text="00:00" Margin="0, 1193, 0, 0"/>
+                        </Grid>
+                        <Grid Name="TimePad" Grid.Column="1" ShowGridLines="True" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </Grid>    
+                
                 </ScrollViewer>
             </Grid>
         </Grid>

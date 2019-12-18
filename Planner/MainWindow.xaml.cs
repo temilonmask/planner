@@ -25,6 +25,7 @@ namespace Planner
         string DayOfWeek = selectedDate.DayOfWeek.ToString();
         int Day = selectedDate.Day;
         
+        
 
         public MainWindow()
         {
@@ -121,22 +122,77 @@ namespace Planner
         {
             if (selectedDate.AddDays(tillMonday).Month == selectedDate.AddDays(tillSunday).Month)
             {
-                Month.Text = selectedDate.Month.ToString() + " " + selectedDate.Year;
+                Month.Text = wordMonth(selectedDate.Month) + " " + selectedDate.Year;
             }
             else if (selectedDate.AddDays(tillMonday).Year == selectedDate.AddDays(tillSunday).Year)
             {
-                Month.Text = selectedDate.AddDays(tillMonday).Month.ToString() + " - " + selectedDate.AddDays(tillSunday).Month.ToString() + " " + selectedDate.Year;
+                Month.Text = wordMonth(selectedDate.AddDays(tillMonday).Month) + " - " + wordMonth(selectedDate.AddDays(tillSunday).Month) + " " + selectedDate.Year;
             }
             else
             {
-                Month.Text = selectedDate.AddDays(tillMonday).Month.ToString() + " " + selectedDate.AddDays(tillMonday).Year.ToString() + " - " + selectedDate.AddDays(tillSunday).Month.ToString() + " " + selectedDate.AddDays(tillSunday).Year.ToString();
+                Month.Text = wordMonth(selectedDate.AddDays(tillMonday).Month) + " " + selectedDate.AddDays(tillMonday).Year.ToString() + " - " + wordMonth(selectedDate.AddDays(tillSunday).Month) + " " + selectedDate.AddDays(tillSunday).Year.ToString();
             }
 
         }
 
+        private string wordMonth(int month)
+        {
+            if (month == 1)
+            {
+                return "January";
+            }
+            else if (month == 2)
+            {
+                return "February";
+            }
+            else if (month == 3)
+            {
+                return "March";
+            }
+            else if (month == 4)
+            {
+                return "April";
+            }
+            else if (month == 5)
+            {
+                return "May";
+            }
+            else if (month == 6)
+            {
+                return "June";
+            }
+            else if (month == 7)
+            {
+                return "July";
+            }
+            else if (month == 8)
+            {
+                return "August";
+            }
+            else if (month == 9)
+            {
+                return "September";
+            }
+            else if (month == 10)
+            {
+                return "October";
+            }
+            else if (month == 11)
+            {
+                return "November";
+            }
+            else
+            {
+                return "December";
+            }
+        }
+
         private void AddEventButtonClick(object sender, RoutedEventArgs e)
         {
-
+            Button test = new Button();
+            test.Content = "Test";
+            TimePad.Children.Add(test);
+            test.SetValue(Grid.ColumnProperty, 2);
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
@@ -160,8 +216,20 @@ namespace Planner
             selectedDate = DateTime.Now;
             DayOfWeek = selectedDate.DayOfWeek.ToString();
             Day = selectedDate.Day;
+            DatePicker.SelectedDate = DateTime.Now;
             FillAll();
-
         }
+
+        private void DateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DatePicker.SelectedDate != null)
+            {
+                selectedDate = DatePicker.SelectedDate ?? DateTime.Now;
+                DayOfWeek = selectedDate.DayOfWeek.ToString();
+                Day = selectedDate.Day;
+                FillAll();
+            }
+        }
+
     }
 }
