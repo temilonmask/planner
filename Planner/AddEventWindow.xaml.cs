@@ -52,7 +52,7 @@ namespace Planner.UI
 
             bool IsTimeAndDateOk = Start < End;
 
-            if (IsTimeAndDateOk && planner.CheckDates(StartDt, EndDt))
+            if (IsTimeAndDateOk && planner.CheckDates(Start, End))
             {
                 Event newevent = new Event
                 {

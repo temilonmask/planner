@@ -191,7 +191,14 @@ namespace Planner
                     newButton.Content = currentEvent.Name;
                     newButton.VerticalAlignment = VerticalAlignment.Top;
                     TimePad.Children.Add(newButton);
-                    newButton.SetValue(Grid.ColumnProperty, (int)currentEvent.StartDt.DayOfWeek - 1);
+                    if ((int)currentEvent.StartDt.DayOfWeek == 0)
+                    {
+                        newButton.SetValue(Grid.ColumnProperty, 6);
+                    }
+                    else
+                    {
+                        newButton.SetValue(Grid.ColumnProperty, (int)currentEvent.StartDt.DayOfWeek - 1);
+                    }
                     int startTime = currentEvent.StartDt.Hour * 60 + currentEvent.StartDt.Minute;
                     int duration = currentEvent.EndDt.Hour * 60 + currentEvent.EndDt.Minute - startTime;
                     newButton.Height = duration;
@@ -199,6 +206,14 @@ namespace Planner
                     margin.Top = startTime;
                     newButton.Margin = margin;
                     newButton.Width = 150;
+                    if (currentEvent.Tag == "work")
+                    {
+                        newButton.Background = Brushes.CadetBlue;
+                    }
+                    else if (currentEvent.Tag == "relax")
+                    {
+                        newButton.Background = Brushes.DarkOrange;
+                    }
                 }
             }
         }
@@ -214,7 +229,6 @@ namespace Planner
             AddEvent.ShowDialog();
             if (AddEvent.DialogResult == true)
             {
-                MessageBox.Show("test");
                 plan.LoadData();
                 FillAll();
                 CleanGrid();
