@@ -27,37 +27,38 @@ namespace Planner
         int Day = selectedDate.Day;
         public DateTime monday;
         public DateTime sunday;
+        Plan plan = new Plan();
 
-        private List<Event> Events = new List<Event> 
-        {
-            new Event { 
-                Name = "Test",
-                Description = "Test data",
-                StartDt = new DateTime(2019, 12, 19, 7, 15, 0),
-                EndDt = new DateTime(2019, 12, 19, 14, 45, 0),
-                Tag = "tag"
-            },
-            new Event {
-                Name = "Test1",
-                Description = "Test data",
-                StartDt = new DateTime(2019, 12, 18, 9, 30, 0),
-                EndDt = new DateTime(2019, 12, 18, 12, 45, 0),
-                Tag = "tag"
-            },
-            new Event {
-                Name = "Test1",
-                Description = "Test data",
-                StartDt = new DateTime(2019, 12, 24, 9, 30, 0),
-                EndDt = new DateTime(2019, 12, 24, 12, 45, 0),
-                Tag = "tag"
-            }
-        };
-        
+        /*p
+         {
+             new Event { 
+                 Name = "Test",
+                 Description = "Test data",
+                 StartDt = new DateTime(2019, 12, 19, 7, 15, 0),
+                 EndDt = new DateTime(2019, 12, 19, 14, 45, 0),
+                 Tag = "tag"
+             },
+             new Event {
+                 Name = "Test1",
+                 Description = "Test data",
+                 StartDt = new DateTime(2019, 12, 18, 9, 30, 0),
+                 EndDt = new DateTime(2019, 12, 18, 12, 45, 0),
+                 Tag = "tag"
+             },
+             new Event {
+                 Name = "Test1",
+                 Description = "Test data",
+                 StartDt = new DateTime(2019, 12, 24, 9, 30, 0),
+                 EndDt = new DateTime(2019, 12, 24, 12, 45, 0),
+                 Tag = "tag"
+             }
+         };*/
+
 
         public MainWindow()
         {
 
-            Plan plan = new Plan();
+
             InitializeComponent();
             FillAll();
             FillEvents();
@@ -181,6 +182,7 @@ namespace Planner
 
         private void FillEvents()
         {
+            List<Event> Events = plan.EventsList();
             foreach (Event currentEvent in Events)
             {
                 if ((currentEvent.StartDt > monday) & (currentEvent.EndDt < sunday))
@@ -210,6 +212,7 @@ namespace Planner
         {
             var AddEvent = new AddEventWindow();
             AddEvent.Show();
+            plan.LoadData();
 
         }
 

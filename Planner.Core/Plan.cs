@@ -14,6 +14,8 @@ namespace Planner.Core
             LoadData();
         }
 
+
+
         public void AddEvent(Event _event)
         {
             Events.Add(_event);
@@ -46,7 +48,7 @@ namespace Planner.Core
         private const string EventsFileName = "../../../../../planner/Planner.Core/Data/Events.json";
 
 
-        private void LoadData()
+        public void LoadData()
         {
             Events = Deserialize<List<Event>>(EventsFileName);
         }
