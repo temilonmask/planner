@@ -14,11 +14,22 @@ namespace Planner.Core
             LoadData();
         }
 
-
+        public bool CheckDates(DateTime start, DateTime end)
+        {
+            foreach(Event Event in Events)
+            {
+                if (!(start > Event.EndDt || end < Event.StartDt))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
         public void AddEvent(Event _event)
         {
             Events.Add(_event);
+            SaveData();
         }
 
         private T Deserialize<T>(string fileName)
@@ -48,7 +59,7 @@ namespace Planner.Core
         private const string EventsFileName = "../../../../../planner/Planner.Core/Data/Events.json";
 
 
-        public void LoadData()
+        private void LoadData()
         {
             Events = Deserialize<List<Event>>(EventsFileName);
         }
