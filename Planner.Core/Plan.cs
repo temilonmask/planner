@@ -43,7 +43,7 @@ namespace Planner.Core
             }
         }
 
-        private const string EventsFileName = "C:/Users/123/Desktop/planner/Planner.Core/Data/Events.json";
+        private const string EventsFileName = "../../../../../planner/Planner.Core/Data/Events.json";
 
 
         private void LoadData()
