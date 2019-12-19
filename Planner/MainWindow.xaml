@@ -17,7 +17,8 @@
                 <ColumnDefinition Width="350"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="1">
+            <Image Width="250" Source="Images/Logo.jpg"/>
+                <Grid Grid.Column="1">
                 <Button BorderThickness="0" Content="Today" FontSize="16"  Background="White" materialDesign:ButtonAssist.CornerRadius="17"  Foreground="RoyalBlue" HorizontalAlignment="Left" Height="34" Width="90" Margin="60, 0" VerticalAlignment="Center" Click="TodayButton_Click"/>
                 <Button Style="{StaticResource MaterialDesignIconButton}" Background="White"  materialDesign:ButtonAssist.CornerRadius="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="50" Width="50" Margin="187, 0" Click="PastButton_Click">
                     <materialDesign:PackIcon HorizontalAlignment="Center" Foreground="RoyalBlue"
