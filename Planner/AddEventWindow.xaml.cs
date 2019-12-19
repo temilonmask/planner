@@ -63,6 +63,7 @@ namespace Planner.UI
                     Tag = null
                 };
                 planner.AddEvent(newevent);
+                DialogResult = true;
                 Close();
             }
             else

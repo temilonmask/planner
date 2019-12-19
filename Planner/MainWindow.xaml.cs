@@ -211,9 +211,15 @@ namespace Planner
         private void AddEventButtonClick(object sender, RoutedEventArgs e)
         {
             var AddEvent = new AddEventWindow();
-            AddEvent.Show();
-            plan.LoadData();
-
+            AddEvent.ShowDialog();
+            if (AddEvent.DialogResult == true)
+            {
+                MessageBox.Show("test");
+                plan.LoadData();
+                FillAll();
+                CleanGrid();
+                FillEvents();
+            }
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)

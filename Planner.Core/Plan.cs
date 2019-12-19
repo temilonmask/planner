@@ -14,6 +14,11 @@ namespace Planner.Core
             LoadData();
         }
 
+        public List<Event> EventsList()
+        {
+            return Events;
+        }
+
         public bool CheckDates(DateTime start, DateTime end)
         {
             foreach(Event Event in Events)
@@ -59,7 +64,7 @@ namespace Planner.Core
         private const string EventsFileName = "../../../../../planner/Planner.Core/Data/Events.json";
 
 
-        private void LoadData()
+        public void LoadData()
         {
             Events = Deserialize<List<Event>>(EventsFileName);
         }
