@@ -43,6 +43,13 @@ namespace Planner
                 StartDt = new DateTime(2019, 12, 18, 9, 30, 0),
                 EndDt = new DateTime(2019, 12, 18, 12, 45, 0),
                 Tag = "tag"
+            },
+            new Event {
+                Name = "Test1",
+                Description = "Test data",
+                StartDt = new DateTime(2019, 12, 24, 9, 30, 0),
+                EndDt = new DateTime(2019, 12, 24, 12, 45, 0),
+                Tag = "tag"
             }
         };
         
@@ -68,6 +75,8 @@ namespace Planner
                 Saturday.Text = selectedDate.AddDays(5).Day.ToString();
                 Sunday.Text = selectedDate.AddDays(6).Day.ToString();
                 monthText(0, 6);
+                monday = selectedDate;
+                sunday = selectedDate.AddDays(7);
 
             }
             if (DayOfWeek == "Tuesday")
@@ -80,6 +89,8 @@ namespace Planner
                 Saturday.Text = selectedDate.AddDays(4).Day.ToString();
                 Sunday.Text = selectedDate.AddDays(5).Day.ToString();
                 monthText(-1, 5);
+                monday = selectedDate.AddDays(-1);
+                sunday = selectedDate.AddDays(5);
             }
             if (DayOfWeek == "Wednesday")
             {
@@ -117,6 +128,8 @@ namespace Planner
                 Saturday.Text = selectedDate.AddDays(1).Day.ToString();
                 Sunday.Text = selectedDate.AddDays(2).Day.ToString();
                 monthText(-4, 2);
+                monday = selectedDate.AddDays(-4);
+                sunday = selectedDate.AddDays(2);
             }
             if (DayOfWeek == "Saturday")
             {
@@ -128,6 +141,8 @@ namespace Planner
                 Monday.Text = selectedDate.AddDays(-5).Day.ToString();
                 Sunday.Text = selectedDate.AddDays(1).Day.ToString();
                 monthText(-5, 1);
+                monday = selectedDate.AddDays(-5);
+                sunday = selectedDate.AddDays(1);
             }
             if (DayOfWeek == "Sunday")
             {
@@ -139,6 +154,8 @@ namespace Planner
                 Saturday.Text = selectedDate.AddDays(-1).Day.ToString();
                 Monday.Text = selectedDate.AddDays(-6).Day.ToString();
                 monthText(-6, 0);
+                monday = selectedDate.AddDays(-6);
+                sunday = selectedDate.AddDays(0);
             }
 
         }
@@ -218,19 +235,25 @@ namespace Planner
             {
                 if ((currentEvent.StartDt > monday) & (currentEvent.EndDt < sunday))
                 {
-                    Button test1 = new Button();
-                    test1.Content = currentEvent.Name;
-                    test1.VerticalAlignment = VerticalAlignment.Top;
-                    TimePad.Children.Add(test1);
-                    test1.SetValue(Grid.ColumnProperty, (int)currentEvent.StartDt.DayOfWeek - 1);
+                    Button newButton = new Button();
+                    newButton.Content = currentEvent.Name;
+                    newButton.VerticalAlignment = VerticalAlignment.Top;
+                    TimePad.Children.Add(newButton);
+                    newButton.SetValue(Grid.ColumnProperty, (int)currentEvent.StartDt.DayOfWeek - 1);
                     int startTime = currentEvent.StartDt.Hour * 60 + currentEvent.StartDt.Minute;
                     int duration = currentEvent.EndDt.Hour * 60 + currentEvent.EndDt.Minute - startTime;
-                    test1.Height = duration;
-                    Thickness margin = test1.Margin;
+                    newButton.Height = duration;
+                    Thickness margin = newButton.Margin;
                     margin.Top = startTime;
-                    test1.Margin = margin;
+                    newButton.Margin = margin;
+                    newButton.Width = 150;
                 }
             }
+        }
+
+        private void CleanGrid()
+        {
+            TimePad.Children.Clear();
         }
 
         private void AddEventButtonClick(object sender, RoutedEventArgs e)
@@ -246,6 +269,8 @@ namespace Planner
             DayOfWeek = selectedDate.DayOfWeek.ToString();
             Day = selectedDate.Day;
             FillAll();
+            CleanGrid();
+            FillEvents();
         }
 
         private void PastButton_Click(object sender, RoutedEventArgs e)
@@ -254,6 +279,8 @@ namespace Planner
             DayOfWeek = selectedDate.DayOfWeek.ToString();
             Day = selectedDate.Day;
             FillAll();
+            CleanGrid();
+            FillEvents();
         }
 
         private void TodayButton_Click(object sender, RoutedEventArgs e)
@@ -263,6 +290,8 @@ namespace Planner
             Day = selectedDate.Day;
             DatePicker.SelectedDate = DateTime.Now;
             FillAll();
+            CleanGrid();
+            FillEvents();
         }
 
         private void DateChanged(object sender, SelectionChangedEventArgs e)
@@ -273,6 +302,8 @@ namespace Planner
                 DayOfWeek = selectedDate.DayOfWeek.ToString();
                 Day = selectedDate.Day;
                 FillAll();
+                CleanGrid();
+                FillEvents();
             }
         }
 
