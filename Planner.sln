@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planner.UI", "Planner\Plann
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planner.Core", "Planner.Core\Planner.Core.csproj", "{4E3CBD8F-5B3D-4EE1-9FFC-27F11022F252}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddEventWindow.UI", "AddEventWindow\AddEventWindow.UI.csproj", "{A3738D5F-3DA5-497A-A966-334C271538EF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{4E3CBD8F-5B3D-4EE1-9FFC-27F11022F252}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E3CBD8F-5B3D-4EE1-9FFC-27F11022F252}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E3CBD8F-5B3D-4EE1-9FFC-27F11022F252}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3738D5F-3DA5-497A-A966-334C271538EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3738D5F-3DA5-497A-A966-334C271538EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3738D5F-3DA5-497A-A966-334C271538EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3738D5F-3DA5-497A-A966-334C271538EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

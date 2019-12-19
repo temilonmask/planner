@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Planner.Core;
+using Planner.UI;
 
 namespace Planner
 {
@@ -189,6 +190,8 @@ namespace Planner
 
         private void AddEventButtonClick(object sender, RoutedEventArgs e)
         {
+            var AddEvent = new AddEventWindow();
+            AddEvent.Show();
             Button test = new Button();
             test.Content = "Test";
             TimePad.Children.Add(test);

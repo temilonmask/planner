@@ -11,7 +11,7 @@ namespace Planner.Core
         private List<Event> Events = new List<Event>();
         public Plan()
         {
-            //LoadData();
+            LoadData();
         }
 
         public void AddEvent(Event _event)
@@ -43,7 +43,7 @@ namespace Planner.Core
             }
         }
 
-        private const string EventsFileName = "../../../../../../Planner.Core/Data/Events";
+        private const string EventsFileName = "C:/Users/123/Desktop/planner/Planner.Core/Data/Events.json";
 
 
         private void LoadData()
