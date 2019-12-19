@@ -25,7 +25,33 @@ namespace Planner
         public static DateTime selectedDate = DateTime.Now;
         string DayOfWeek = selectedDate.DayOfWeek.ToString();
         int Day = selectedDate.Day;
-        
+        public DateTime monday;
+        public DateTime sunday;
+
+        private List<Event> Events = new List<Event> 
+        {
+            new Event { 
+                Name = "Test",
+                Description = "Test data",
+                StartDt = new DateTime(2019, 12, 19, 7, 15, 0),
+                EndDt = new DateTime(2019, 12, 19, 14, 45, 0),
+                Tag = "tag"
+            },
+            new Event {
+                Name = "Test1",
+                Description = "Test data",
+                StartDt = new DateTime(2019, 12, 18, 9, 30, 0),
+                EndDt = new DateTime(2019, 12, 18, 12, 45, 0),
+                Tag = "tag"
+            },
+            new Event {
+                Name = "Test1",
+                Description = "Test data",
+                StartDt = new DateTime(2019, 12, 24, 9, 30, 0),
+                EndDt = new DateTime(2019, 12, 24, 12, 45, 0),
+                Tag = "tag"
+            }
+        };
         
 
         public MainWindow()
@@ -34,89 +60,54 @@ namespace Planner
             Plan plan = new Plan();
             InitializeComponent();
             FillAll();
+            FillEvents();
         }
 
         private void FillAll()
         {
             if (DayOfWeek == "Monday")
             {
-                Monday.Text = Day.ToString();
-                Tuesday.Text = selectedDate.AddDays(1).Day.ToString();
-                Wednesday.Text = selectedDate.AddDays(2).Day.ToString();
-                Thursday.Text = selectedDate.AddDays(3).Day.ToString();
-                Friday.Text = selectedDate.AddDays(4).Day.ToString();
-                Saturday.Text = selectedDate.AddDays(5).Day.ToString();
-                Sunday.Text = selectedDate.AddDays(6).Day.ToString();
-                monthText(0, 6);
+                FillAllForDay(0);
 
             }
             if (DayOfWeek == "Tuesday")
             {
-                Tuesday.Text = Day.ToString();
-                Monday.Text = selectedDate.AddDays(-1).Day.ToString();
-                Wednesday.Text = selectedDate.AddDays(1).Day.ToString();
-                Thursday.Text = selectedDate.AddDays(2).Day.ToString();
-                Friday.Text = selectedDate.AddDays(3).Day.ToString();
-                Saturday.Text = selectedDate.AddDays(4).Day.ToString();
-                Sunday.Text = selectedDate.AddDays(5).Day.ToString();
-                monthText(-1, 5);
+                FillAllForDay(-1);
             }
             if (DayOfWeek == "Wednesday")
             {
-                Wednesday.Text = Day.ToString();
-                Tuesday.Text = selectedDate.AddDays(-1).Day.ToString();
-                Monday.Text = selectedDate.AddDays(-2).Day.ToString();
-                Thursday.Text = selectedDate.AddDays(1).Day.ToString();
-                Friday.Text = selectedDate.AddDays(2).Day.ToString();
-                Saturday.Text = selectedDate.AddDays(3).Day.ToString();
-                Sunday.Text = selectedDate.AddDays(4).Day.ToString();
-                monthText(-2, 4);
+                FillAllForDay(-2);
             }
             if (DayOfWeek == "Thursday")
             {
-                Thursday.Text = Day.ToString();
-                Tuesday.Text = selectedDate.AddDays(-2).Day.ToString();
-                Wednesday.Text = selectedDate.AddDays(-1).Day.ToString();
-                Monday.Text = selectedDate.AddDays(-3).Day.ToString();
-                Friday.Text = selectedDate.AddDays(1).Day.ToString();
-                Saturday.Text = selectedDate.AddDays(2).Day.ToString();
-                Sunday.Text = selectedDate.AddDays(3).Day.ToString();
-                monthText(-3, 3);
+                FillAllForDay(-3);
             }
             if (DayOfWeek == "Friday")
             {
-                Friday.Text = Day.ToString();
-                Tuesday.Text = selectedDate.AddDays(-3).Day.ToString();
-                Wednesday.Text = selectedDate.AddDays(-2).Day.ToString();
-                Thursday.Text = selectedDate.AddDays(-1).Day.ToString();
-                Monday.Text = selectedDate.AddDays(-4).Day.ToString();
-                Saturday.Text = selectedDate.AddDays(1).Day.ToString();
-                Sunday.Text = selectedDate.AddDays(2).Day.ToString();
-                monthText(-4, 2);
+                FillAllForDay(-4);
             }
             if (DayOfWeek == "Saturday")
             {
-                Saturday.Text = Day.ToString();
-                Tuesday.Text = selectedDate.AddDays(-4).Day.ToString();
-                Wednesday.Text = selectedDate.AddDays(-3).Day.ToString();
-                Thursday.Text = selectedDate.AddDays(-2).Day.ToString();
-                Friday.Text = selectedDate.AddDays(-1).Day.ToString();
-                Monday.Text = selectedDate.AddDays(-5).Day.ToString();
-                Sunday.Text = selectedDate.AddDays(1).Day.ToString();
-                monthText(-5, 1);
+                FillAllForDay(-5);
             }
             if (DayOfWeek == "Sunday")
             {
-                Sunday.Text = Day.ToString();
-                Tuesday.Text = selectedDate.AddDays(-5).Day.ToString();
-                Wednesday.Text = selectedDate.AddDays(-4).Day.ToString();
-                Thursday.Text = selectedDate.AddDays(-3).Day.ToString();
-                Friday.Text = selectedDate.AddDays(-2).Day.ToString();
-                Saturday.Text = selectedDate.AddDays(-1).Day.ToString();
-                Monday.Text = selectedDate.AddDays(-6).Day.ToString();
-                monthText(-6, 0);
+                FillAllForDay(-6);
             }
+        }
 
+        private void FillAllForDay(int tillMonday) 
+        {
+            Monday.Text = selectedDate.AddDays(tillMonday).Day.ToString();
+            Tuesday.Text = selectedDate.AddDays(tillMonday + 1).Day.ToString();
+            Wednesday.Text = selectedDate.AddDays(tillMonday + 2).Day.ToString();
+            Thursday.Text = selectedDate.AddDays(tillMonday + 3).Day.ToString();
+            Friday.Text = selectedDate.AddDays(tillMonday + 4).Day.ToString();
+            Saturday.Text = selectedDate.AddDays(tillMonday + 5).Day.ToString();
+            Sunday.Text = selectedDate.AddDays(tillMonday + 6).Day.ToString();
+            monthText(tillMonday, tillMonday + 6);
+            monday = selectedDate.AddDays(tillMonday);
+            sunday = selectedDate.AddDays(tillMonday + 6);
         }
 
         private void monthText(int tillMonday, int tillSunday)
@@ -188,14 +179,38 @@ namespace Planner
             }
         }
 
+        private void FillEvents()
+        {
+            foreach (Event currentEvent in Events)
+            {
+                if ((currentEvent.StartDt > monday) & (currentEvent.EndDt < sunday))
+                {
+                    Button newButton = new Button();
+                    newButton.Content = currentEvent.Name;
+                    newButton.VerticalAlignment = VerticalAlignment.Top;
+                    TimePad.Children.Add(newButton);
+                    newButton.SetValue(Grid.ColumnProperty, (int)currentEvent.StartDt.DayOfWeek - 1);
+                    int startTime = currentEvent.StartDt.Hour * 60 + currentEvent.StartDt.Minute;
+                    int duration = currentEvent.EndDt.Hour * 60 + currentEvent.EndDt.Minute - startTime;
+                    newButton.Height = duration;
+                    Thickness margin = newButton.Margin;
+                    margin.Top = startTime;
+                    newButton.Margin = margin;
+                    newButton.Width = 150;
+                }
+            }
+        }
+
+        private void CleanGrid()
+        {
+            TimePad.Children.Clear();
+        }
+
         private void AddEventButtonClick(object sender, RoutedEventArgs e)
         {
             var AddEvent = new AddEventWindow();
             AddEvent.Show();
-            Button test = new Button();
-            test.Content = "Test";
-            TimePad.Children.Add(test);
-            test.SetValue(Grid.ColumnProperty, 2);
+
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
@@ -204,6 +219,8 @@ namespace Planner
             DayOfWeek = selectedDate.DayOfWeek.ToString();
             Day = selectedDate.Day;
             FillAll();
+            CleanGrid();
+            FillEvents();
         }
 
         private void PastButton_Click(object sender, RoutedEventArgs e)
@@ -212,6 +229,8 @@ namespace Planner
             DayOfWeek = selectedDate.DayOfWeek.ToString();
             Day = selectedDate.Day;
             FillAll();
+            CleanGrid();
+            FillEvents();
         }
 
         private void TodayButton_Click(object sender, RoutedEventArgs e)
@@ -221,6 +240,8 @@ namespace Planner
             Day = selectedDate.Day;
             DatePicker.SelectedDate = DateTime.Now;
             FillAll();
+            CleanGrid();
+            FillEvents();
         }
 
         private void DateChanged(object sender, SelectionChangedEventArgs e)
@@ -231,6 +252,8 @@ namespace Planner
                 DayOfWeek = selectedDate.DayOfWeek.ToString();
                 Day = selectedDate.Day;
                 FillAll();
+                CleanGrid();
+                FillEvents();
             }
         }
 
