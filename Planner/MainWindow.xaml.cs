@@ -67,97 +67,47 @@ namespace Planner
         {
             if (DayOfWeek == "Monday")
             {
-                Monday.Text = Day.ToString();
-                Tuesday.Text = selectedDate.AddDays(1).Day.ToString();
-                Wednesday.Text = selectedDate.AddDays(2).Day.ToString();
-                Thursday.Text = selectedDate.AddDays(3).Day.ToString();
-                Friday.Text = selectedDate.AddDays(4).Day.ToString();
-                Saturday.Text = selectedDate.AddDays(5).Day.ToString();
-                Sunday.Text = selectedDate.AddDays(6).Day.ToString();
-                monthText(0, 6);
-                monday = selectedDate;
-                sunday = selectedDate.AddDays(7);
+                FillAllForDay(0);
 
             }
             if (DayOfWeek == "Tuesday")
             {
-                Tuesday.Text = Day.ToString();
-                Monday.Text = selectedDate.AddDays(-1).Day.ToString();
-                Wednesday.Text = selectedDate.AddDays(1).Day.ToString();
-                Thursday.Text = selectedDate.AddDays(2).Day.ToString();
-                Friday.Text = selectedDate.AddDays(3).Day.ToString();
-                Saturday.Text = selectedDate.AddDays(4).Day.ToString();
-                Sunday.Text = selectedDate.AddDays(5).Day.ToString();
-                monthText(-1, 5);
-                monday = selectedDate.AddDays(-1);
-                sunday = selectedDate.AddDays(5);
+                FillAllForDay(-1);
             }
             if (DayOfWeek == "Wednesday")
             {
-                Wednesday.Text = Day.ToString();
-                Tuesday.Text = selectedDate.AddDays(-1).Day.ToString();
-                Monday.Text = selectedDate.AddDays(-2).Day.ToString();
-                Thursday.Text = selectedDate.AddDays(1).Day.ToString();
-                Friday.Text = selectedDate.AddDays(2).Day.ToString();
-                Saturday.Text = selectedDate.AddDays(3).Day.ToString();
-                Sunday.Text = selectedDate.AddDays(4).Day.ToString();
-                monthText(-2, 4);
-                monday = selectedDate.AddDays(-2);
-                sunday = selectedDate.AddDays(4);
+                FillAllForDay(-2);
             }
             if (DayOfWeek == "Thursday")
             {
-                Thursday.Text = Day.ToString();
-                Tuesday.Text = selectedDate.AddDays(-2).Day.ToString();
-                Wednesday.Text = selectedDate.AddDays(-1).Day.ToString();
-                Monday.Text = selectedDate.AddDays(-3).Day.ToString();
-                Friday.Text = selectedDate.AddDays(1).Day.ToString();
-                Saturday.Text = selectedDate.AddDays(2).Day.ToString();
-                Sunday.Text = selectedDate.AddDays(3).Day.ToString();
-                monthText(-3, 3);
-                monday = selectedDate.AddDays(-3);
-                sunday = selectedDate.AddDays(3);
+                FillAllForDay(-3);
             }
             if (DayOfWeek == "Friday")
             {
-                Friday.Text = Day.ToString();
-                Tuesday.Text = selectedDate.AddDays(-3).Day.ToString();
-                Wednesday.Text = selectedDate.AddDays(-2).Day.ToString();
-                Thursday.Text = selectedDate.AddDays(-1).Day.ToString();
-                Monday.Text = selectedDate.AddDays(-4).Day.ToString();
-                Saturday.Text = selectedDate.AddDays(1).Day.ToString();
-                Sunday.Text = selectedDate.AddDays(2).Day.ToString();
-                monthText(-4, 2);
-                monday = selectedDate.AddDays(-4);
-                sunday = selectedDate.AddDays(2);
+                FillAllForDay(-4);
             }
             if (DayOfWeek == "Saturday")
             {
-                Saturday.Text = Day.ToString();
-                Tuesday.Text = selectedDate.AddDays(-4).Day.ToString();
-                Wednesday.Text = selectedDate.AddDays(-3).Day.ToString();
-                Thursday.Text = selectedDate.AddDays(-2).Day.ToString();
-                Friday.Text = selectedDate.AddDays(-1).Day.ToString();
-                Monday.Text = selectedDate.AddDays(-5).Day.ToString();
-                Sunday.Text = selectedDate.AddDays(1).Day.ToString();
-                monthText(-5, 1);
-                monday = selectedDate.AddDays(-5);
-                sunday = selectedDate.AddDays(1);
+                FillAllForDay(-5);
             }
             if (DayOfWeek == "Sunday")
             {
-                Sunday.Text = Day.ToString();
-                Tuesday.Text = selectedDate.AddDays(-5).Day.ToString();
-                Wednesday.Text = selectedDate.AddDays(-4).Day.ToString();
-                Thursday.Text = selectedDate.AddDays(-3).Day.ToString();
-                Friday.Text = selectedDate.AddDays(-2).Day.ToString();
-                Saturday.Text = selectedDate.AddDays(-1).Day.ToString();
-                Monday.Text = selectedDate.AddDays(-6).Day.ToString();
-                monthText(-6, 0);
-                monday = selectedDate.AddDays(-6);
-                sunday = selectedDate.AddDays(0);
+                FillAllForDay(-6);
             }
+        }
 
+        private void FillAllForDay(int tillMonday) 
+        {
+            Monday.Text = selectedDate.AddDays(tillMonday).Day.ToString();
+            Tuesday.Text = selectedDate.AddDays(tillMonday + 1).Day.ToString();
+            Wednesday.Text = selectedDate.AddDays(tillMonday + 2).Day.ToString();
+            Thursday.Text = selectedDate.AddDays(tillMonday + 3).Day.ToString();
+            Friday.Text = selectedDate.AddDays(tillMonday + 4).Day.ToString();
+            Saturday.Text = selectedDate.AddDays(tillMonday + 5).Day.ToString();
+            Sunday.Text = selectedDate.AddDays(tillMonday + 6).Day.ToString();
+            monthText(tillMonday, tillMonday + 6);
+            monday = selectedDate.AddDays(tillMonday);
+            sunday = selectedDate.AddDays(tillMonday + 6);
         }
 
         private void monthText(int tillMonday, int tillSunday)
