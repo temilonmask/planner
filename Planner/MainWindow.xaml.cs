@@ -25,7 +25,26 @@ namespace Planner
         public static DateTime selectedDate = DateTime.Now;
         string DayOfWeek = selectedDate.DayOfWeek.ToString();
         int Day = selectedDate.Day;
-        
+        public DateTime monday;
+        public DateTime sunday;
+
+        private List<Event> Events = new List<Event> 
+        {
+            new Event { 
+                Name = "Test",
+                Description = "Test data",
+                StartDt = new DateTime(2019, 12, 19, 7, 15, 0),
+                EndDt = new DateTime(2019, 12, 19, 14, 45, 0),
+                Tag = "tag"
+            },
+            new Event {
+                Name = "Test1",
+                Description = "Test data",
+                StartDt = new DateTime(2019, 12, 18, 9, 30, 0),
+                EndDt = new DateTime(2019, 12, 18, 12, 45, 0),
+                Tag = "tag"
+            }
+        };
         
 
         public MainWindow()
@@ -34,6 +53,7 @@ namespace Planner
             Plan plan = new Plan();
             InitializeComponent();
             FillAll();
+            FillEvents();
         }
 
         private void FillAll()
@@ -71,6 +91,8 @@ namespace Planner
                 Saturday.Text = selectedDate.AddDays(3).Day.ToString();
                 Sunday.Text = selectedDate.AddDays(4).Day.ToString();
                 monthText(-2, 4);
+                monday = selectedDate.AddDays(-2);
+                sunday = selectedDate.AddDays(4);
             }
             if (DayOfWeek == "Thursday")
             {
@@ -82,6 +104,8 @@ namespace Planner
                 Saturday.Text = selectedDate.AddDays(2).Day.ToString();
                 Sunday.Text = selectedDate.AddDays(3).Day.ToString();
                 monthText(-3, 3);
+                monday = selectedDate.AddDays(-3);
+                sunday = selectedDate.AddDays(3);
             }
             if (DayOfWeek == "Friday")
             {
@@ -188,14 +212,32 @@ namespace Planner
             }
         }
 
+        private void FillEvents()
+        {
+            foreach (Event currentEvent in Events)
+            {
+                if ((currentEvent.StartDt > monday) & (currentEvent.EndDt < sunday))
+                {
+                    Button test1 = new Button();
+                    test1.Content = currentEvent.Name;
+                    test1.VerticalAlignment = VerticalAlignment.Top;
+                    TimePad.Children.Add(test1);
+                    test1.SetValue(Grid.ColumnProperty, (int)currentEvent.StartDt.DayOfWeek - 1);
+                    int startTime = currentEvent.StartDt.Hour * 60 + currentEvent.StartDt.Minute;
+                    int duration = currentEvent.EndDt.Hour * 60 + currentEvent.EndDt.Minute - startTime;
+                    test1.Height = duration;
+                    Thickness margin = test1.Margin;
+                    margin.Top = startTime;
+                    test1.Margin = margin;
+                }
+            }
+        }
+
         private void AddEventButtonClick(object sender, RoutedEventArgs e)
         {
             var AddEvent = new AddEventWindow();
             AddEvent.Show();
-            Button test = new Button();
-            test.Content = "Test";
-            TimePad.Children.Add(test);
-            test.SetValue(Grid.ColumnProperty, 2);
+
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
