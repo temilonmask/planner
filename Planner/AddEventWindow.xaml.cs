@@ -30,6 +30,8 @@ namespace Planner.UI
 
         private void AddEventButtonClick(object sender, RoutedEventArgs e)
         {
+            List<string> ListOfTags = new List<string> { "Work", "Family", "Rest" };
+
             Plan planner = new Plan();
             string name = NameTextBox.Text ?? "No name";
             string description = Description.Text;

@@ -9,8 +9,8 @@
         Title="AddEventWindow" Height="349" Width="442" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="75*"/>
-            <ColumnDefinition Width="146*"/>
+            <ColumnDefinition Width="159*"/>
+            <ColumnDefinition Width="283*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="69*"/>
@@ -19,13 +19,24 @@
             <RowDefinition Height="83*"/>
         </Grid.RowDefinitions>
         <TextBox FontSize="20" Name="NameTextBox" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Add name" Foreground="Black" Margin="57,0,35,0" Grid.ColumnSpan="2" Height="36"/>
-        <DatePicker materialDesign:HintAssist.Hint="Date of start" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Name="StartDayPicker" Height="37" Margin="41,10,211,0" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top"/>
-        <StackPanel Orientation="Vertical" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Height="61" Width="100">
+        <DatePicker materialDesign:HintAssist.Hint="Date of start" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Name="StartDayPicker" Height="37" Margin="8,6,171,0" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top"/>
+        <StackPanel Orientation="Vertical" Grid.Column="1" VerticalAlignment="Center" Grid.Row="1" Height="61" Width="100" Margin="118,0,65,0">
             <materialDesign:TimePicker materialDesign:HintAssist.Hint="Time of start" Is24Hours="True" Name="StartTimePicker" Width="100"/>
             <materialDesign:TimePicker materialDesign:HintAssist.Hint="Time of end" Is24Hours="True" Name="EndTimePicker" Width="100"/>
         </StackPanel>
         <TextBox Name="Description" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Description" FontSize="12" BorderBrush="Gray" BorderThickness="1" Height="108" Margin="57,0,64,0"/>
-        <Button Grid.Row="3" BorderThickness="0" Content="Cancel" FontSize="12" BorderBrush="DeepPink" Background="White" materialDesign:ButtonAssist.CornerRadius="15"  Foreground="DeepPink" HorizontalAlignment="Left" Height="30" Width="80" VerticalAlignment="Center" Click="CancelButtonClick" Margin="1,0,0,0" Grid.Column="1"/>
-        <Button Grid.Row="3" Grid.Column="1" BorderThickness="0" Content="Add" FontSize="12" BorderBrush="DeepPink" Background="White" materialDesign:ButtonAssist.CornerRadius="15"  Foreground="DeepPink" HorizontalAlignment="Left" Height="30" Width="80" VerticalAlignment="Center" Click="AddEventButtonClick" Margin="10,0,0,0"/>
+        <Button Grid.Row="3" BorderThickness="0" Content="Cancel" FontSize="12" BorderBrush="DeepPink" Background="White" materialDesign:ButtonAssist.CornerRadius="15"  Foreground="DeepPink" HorizontalAlignment="Left" Height="30" Width="80" VerticalAlignment="Center" Click="CancelButtonClick" Margin="127,0,0,0" Grid.ColumnSpan="2"/>
+        <Button Grid.Row="3" Grid.Column="1" BorderThickness="0" Content="Add" FontSize="12" BorderBrush="DeepPink" Background="White" materialDesign:ButtonAssist.CornerRadius="15"  Foreground="DeepPink" HorizontalAlignment="Left" Height="30" Width="80" VerticalAlignment="Center" Click="AddEventButtonClick" Margin="12,0,0,0"/>
+        <ListBox FontSize="8" IsEnabled="{Binding IsChecked, ElementName=EnableListBox}" Margin="57,69,0,0" Grid.RowSpan="2" Name="Tags">
+            <TextBlock>
+                Work
+            </TextBlock>
+            <TextBlock>
+                Family
+            </TextBlock>
+            <TextBlock>
+                Rest
+            </TextBlock>
+        </ListBox>
     </Grid>
 </Window>
