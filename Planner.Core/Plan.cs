@@ -8,7 +8,7 @@ namespace Planner.Core
 {
     public class Plan
     {
-        private List<Event> Events = new List<Event>();
+        public List<Event> Events = new List<Event>();
         public Plan()
         {
             LoadData();
@@ -34,6 +34,12 @@ namespace Planner.Core
         public void AddEvent(Event _event)
         {
             Events.Add(_event);
+            SaveData();
+        }
+
+        public void DeleteEvent(Event _event)
+        {
+            Events.Remove(_event);
             SaveData();
         }
 
