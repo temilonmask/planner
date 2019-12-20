@@ -213,13 +213,17 @@ namespace Planner
                     margin.Top = startTime;
                     newButton.Margin = margin;
                     newButton.Width = 150;
-                    if (currentEvent.Tag == "work")
+                    if (currentEvent.Tag == "Work")
                     {
                         newButton.Background = Brushes.CadetBlue;
                     }
-                    else if (currentEvent.Tag == "relax")
+                    else if (currentEvent.Tag == "Rest")
                     {
                         newButton.Background = Brushes.DarkOrange;
+                    }
+                    else if (currentEvent.Tag == "Family")
+                    {
+                        newButton.Background = Brushes.SeaGreen;
                     }
                 }
             }

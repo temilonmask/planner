@@ -35,6 +35,8 @@ namespace Planner.UI
             Plan planner = new Plan();
             string name = NameTextBox.Text ?? "No name";
             string description = Description.Text;
+            ListBoxItem SelectedItem = Tags.SelectedItem as ListBoxItem;
+            string Tag = SelectedItem.Content.ToString();
 
             DateTime StartDt = StartDayPicker.SelectedDate ?? DateTime.Today;
             DateTime StartT = StartTimePicker.SelectedTime ?? DateTime.Now;
@@ -45,7 +47,7 @@ namespace Planner.UI
             //StartDt.AddHours(diffStart.TotalHours).AddMinutes(diffStart.Minutes);
 
             DateTime EndT = EndTimePicker.SelectedTime ?? DateTime.Now;
-            DateTime End = new DateTime(StartDt.Year, StartDt.Month, StartDt.Day, StartDt.Hour, StartDt.Minute, StartDt.Second);
+            DateTime End = new DateTime(StartDt.Year, StartDt.Month, StartDt.Day, EndT.Hour, EndT.Minute, EndT.Second);
 
             //TimeSpan diffEnd = EndT.TimeOfDay - EndDt.TimeOfDay;
             //StartDt.AddDays(diffStart.TotalHours);
@@ -61,7 +63,7 @@ namespace Planner.UI
                     StartDt = Start,
                     EndDt = End,
                     Description = description,
-                    Tag = null
+                    Tag = Tag
                 };
                 planner.AddEvent(newevent);
                 DialogResult = true;
