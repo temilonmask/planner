@@ -31,6 +31,13 @@ namespace Planner.UI
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
+            DialogResult = true;
+            Close();
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
             Close();
         }
     }

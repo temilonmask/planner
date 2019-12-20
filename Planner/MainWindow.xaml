@@ -52,76 +52,16 @@
                 <Calendar SelectedDatesChanged="DateChanged" Name="DatePicker" BorderThickness="0"  BorderBrush="RoyalBlue"  Foreground="RoyalBlue" HorizontalAlignment="Center" Background="White" Grid.Row="1"/>
             </Grid>
             <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="90"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="17"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="35"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <TextBlock Grid.Column="1" Text="ПН" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Column="2" Text="ВТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Column="3" Text="СР" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Column="4" Text="ЧТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Column="5" Text="ПТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Column="6" Text="СБ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Grid.Column="7" Text="ВС" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Name="Monday" Grid.Row="1" Grid.Column="1" Text="1" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Name="Tuesday" Grid.Row="1" Grid.Column="2" Text="2" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Name="Wednesday"  Grid.Row="1" Grid.Column="3" Text="3" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Name="Thursday" Grid.Row="1" Grid.Column="4" Text="4" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Name="Friday" Grid.Row="1" Grid.Column="5" Text="5" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Name="Saturday" Grid.Row="1" Grid.Column="6" Text="6" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                    <TextBlock Name="Sunday" Grid.Row="1" Grid.Column="7" Text="7" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
-                </Grid>
-                <ScrollViewer Grid.Row="1">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="25"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
+                <TabControl BorderThickness="0" TabStripPlacement="Right">
+                    <TabItem Header="Calendar view" Width="100" Height="30">
                         <Grid>
-                            <TextBlock FontSize="10" Text="01:00" Margin="0, 53, 0, 0"/>
-                            <TextBlock FontSize="10" Text="02:00" Margin="0, 113, 0, 0"/>
-                            <TextBlock FontSize="10" Text="03:00" Margin="0, 173, 0, 0"/>
-                            <TextBlock FontSize="10" Text="04:00" Margin="0, 233, 0, 0"/>
-                            <TextBlock FontSize="10" Text="05:00" Margin="0, 293, 0, 0"/>
-                            <TextBlock FontSize="10" Text="06:00" Margin="0, 353, 0, 0"/>
-                            <TextBlock FontSize="10" Text="07:00" Margin="0, 413, 0, 0"/>
-                            <TextBlock FontSize="10" Text="08:00" Margin="0, 473, 0, 0"/>
-                            <TextBlock FontSize="10" Text="09:00" Margin="0, 533, 0, 0"/>
-                            <TextBlock FontSize="10" Text="10:00" Margin="0, 593, 0, 0"/>
-                            <TextBlock FontSize="10" Text="11:00" Margin="0, 653, 0, 0"/>
-                            <TextBlock FontSize="10" Text="12:00" Margin="0, 713, 0, 0"/>
-                            <TextBlock FontSize="10" Text="13:00" Margin="0, 773, 0, 0"/>
-                            <TextBlock FontSize="10" Text="14:00" Margin="0, 833, 0, 0"/>
-                            <TextBlock FontSize="10" Text="15:00" Margin="0, 893, 0, 0"/>
-                            <TextBlock FontSize="10" Text="16:00" Margin="0, 953, 0, 0"/>
-                            <TextBlock FontSize="10" Text="17:00" Margin="0, 1013, 0, 0"/>
-                            <TextBlock FontSize="10" Text="18:00" Margin="0, 1073, 0, 0"/>
-                            <TextBlock FontSize="10" Text="19:00" Margin="0, 1133, 0, 0"/>
-                            <TextBlock FontSize="10" Text="20:00" Margin="0, 1193, 0, 0"/>
-                            <TextBlock FontSize="10" Text="21:00" Margin="0, 1253, 0, 0"/>
-                            <TextBlock FontSize="10" Text="22:00" Margin="0, 1313, 0, 0"/>
-                            <TextBlock FontSize="10" Text="23:00" Margin="0, 1373, 0, 0"/>
-                            <TextBlock FontSize="10" Text="00:00" Margin="0, 1433, 0, 0"/>
-                        </Grid>
-                        <Grid  Grid.Column="1" >
-                            <Grid Panel.ZIndex="10" Name="TimePad" ShowGridLines="True" >
+                             <Grid.RowDefinitions>
+                                <RowDefinition Height="90"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid>
                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="25"/>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
@@ -129,35 +69,165 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
+                                    <ColumnDefinition Width="17"/>
                                 </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Column="1" Text="ПН" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                                <TextBlock Grid.Column="2" Text="ВТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                                <TextBlock Grid.Column="3" Text="СР" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                                <TextBlock Grid.Column="4" Text="ЧТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                                <TextBlock Grid.Column="5" Text="ПТ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                                <TextBlock Grid.Column="6" Text="СБ" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                                <TextBlock Grid.Column="7" Text="ВС" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                                <TextBlock Name="Monday" Grid.Row="1" Grid.Column="1" Text="1" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                                <TextBlock Name="Tuesday" Grid.Row="1" Grid.Column="2" Text="2" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                                <TextBlock Name="Wednesday"  Grid.Row="1" Grid.Column="3" Text="3" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                                <TextBlock Name="Thursday" Grid.Row="1" Grid.Column="4" Text="4" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                                <TextBlock Name="Friday" Grid.Row="1" Grid.Column="5" Text="5" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                                <TextBlock Name="Saturday" Grid.Row="1" Grid.Column="6" Text="6" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
+                                <TextBlock Name="Sunday" Grid.Row="1" Grid.Column="7" Text="7" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Foreground="#646464"/>
                             </Grid>
-                            <Border Height="61" Margin="0, 0, 0, 0" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 60, 0, 0" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 120, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 180, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 240, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 300, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 360, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 420, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 480, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 540, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 600, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 660, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 720, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 780, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 840, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 900, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 960, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 1020, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 1080, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 1140, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 1200, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 1260, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 1320, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
-                            <Border Height="61" Margin="0, 1380, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                            <ScrollViewer Grid.Row="1">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="25"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid>
+                                        <TextBlock FontSize="10" Text="01:00" Margin="0, 53, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="02:00" Margin="0, 113, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="03:00" Margin="0, 173, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="04:00" Margin="0, 233, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="05:00" Margin="0, 293, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="06:00" Margin="0, 353, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="07:00" Margin="0, 413, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="08:00" Margin="0, 473, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="09:00" Margin="0, 533, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="10:00" Margin="0, 593, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="11:00" Margin="0, 653, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="12:00" Margin="0, 713, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="13:00" Margin="0, 773, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="14:00" Margin="0, 833, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="15:00" Margin="0, 893, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="16:00" Margin="0, 953, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="17:00" Margin="0, 1013, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="18:00" Margin="0, 1073, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="19:00" Margin="0, 1133, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="20:00" Margin="0, 1193, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="21:00" Margin="0, 1253, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="22:00" Margin="0, 1313, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="23:00" Margin="0, 1373, 0, 0"/>
+                                        <TextBlock FontSize="10" Text="00:00" Margin="0, 1433, 0, 0"/>
+                                    </Grid>
+                                    <Grid  Grid.Column="1" >
+                                        <Grid Panel.ZIndex="10" Name="TimePad" ShowGridLines="True" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                        </Grid>
+                                        <Border Height="61" Margin="0, 0, 0, 0" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 60, 0, 0" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 120, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 180, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 240, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 300, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 360, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 420, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 480, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 540, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 600, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 660, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 720, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 780, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 840, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 900, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 960, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 1020, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 1080, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 1140, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 1200, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 1260, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 1320, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                        <Border Height="61" Margin="0, 1380, 0, 0" Grid.ColumnSpan="7" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="0, 1"/>
+                                    </Grid>
+                                </Grid>
+                            </ScrollViewer>
                         </Grid>
-                    </Grid>
-                </ScrollViewer>
+                    </TabItem>
+                    <TabItem BorderThickness="0" Header="All events" Width="100" Height="30">
+                        <Grid>
+                            <materialDesign:Card Height="700" VerticalAlignment="Top"  UniformCornerRadius="0" Background="White">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition />
+                                        
+                                        <ColumnDefinition Width="150"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="20"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition/>
+                                        <RowDefinition Height="20"/>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="1" Grid.Column="1">
+                                        <materialDesign:Card Height="30" UniformCornerRadius="0" Background="White">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="Name" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="RoyalBlue"/>
+                                                <TextBlock Text="Begin" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="RoyalBlue"/>
+                                                <TextBlock Text="End" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="RoyalBlue"/>
+                                                <TextBlock Text="Tag" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="RoyalBlue"/>
+
+                                            </Grid>
+                                        </materialDesign:Card>
+                                    </StackPanel>
+                                    <ListBox Grid.Row="2" Grid.Column="1" Name="AllEvents">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Margin="0.2">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="200"/>
+                                                        <ColumnDefinition Width="200"/>
+                                                        <ColumnDefinition Width="200"/>
+                                                        <ColumnDefinition Width="200"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Text="{Binding Name}"/>
+                                                    <TextBlock Grid.Column="1" Text="{Binding StartDt}"/>
+                                                    <TextBlock Grid.Column="2" Text="{Binding EndDt}"/>
+                                                    <TextBlock Grid.Column="3" Text="{Binding Tag}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                    <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="2">
+                                        <Grid Height="270">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                        </Grid>
+                                    </StackPanel>
+                                </Grid>
+                            </materialDesign:Card>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+                
             </Grid>
         </Grid>
     </Grid>

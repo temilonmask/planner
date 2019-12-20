@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Planner.UI"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="AddEventWindow" Height="349" Width="442">
+        Title="AddEventWindow" Height="349" Width="442" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="107*"/>

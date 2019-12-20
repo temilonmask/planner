@@ -62,6 +62,7 @@ namespace Planner
             InitializeComponent();
             FillAll();
             FillEvents();
+            AllSessions();
         }
 
         private void FillAll()
@@ -126,6 +127,11 @@ namespace Planner
                 Month.Text = wordMonth(selectedDate.AddDays(tillMonday).Month) + " " + selectedDate.AddDays(tillMonday).Year.ToString() + " - " + wordMonth(selectedDate.AddDays(tillSunday).Month) + " " + selectedDate.AddDays(tillSunday).Year.ToString();
             }
 
+        }
+
+        private void AllSessions()
+        {
+            AllEvents.ItemsSource = plan.Events;
         }
 
         private string wordMonth(int month)
@@ -249,7 +255,15 @@ namespace Planner
                 }
             }
             var infoSession = new EventInfo(infoEvent);
-            infoSession.Show();
+            infoSession.ShowDialog();
+            if (infoSession.DialogResult == false)
+            {
+                plan.DeleteEvent(infoEvent);
+                plan.LoadData();
+                FillAll();
+                CleanGrid();
+                FillEvents();
+            }
 
         }
 
