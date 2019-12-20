@@ -4,9 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Planner.UI"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="EventInfo" Height="450" Width="800">
+        Title="EventInfo" Height="400" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+       
+                
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+        <TextBlock Text="Event:" FontSize="20" Foreground="DeepPink" Width="54" Margin="10" Grid.Row="0"/>
+        <TextBlock Name="Name" Text="" Foreground="RoyalBlue" FontSize="14" Margin="10" Grid.Row="1"/>
+        <TextBlock Name="BeginDt" Text="" Foreground="RoyalBlue" FontSize="14" Margin="10" Grid.Row="2"/>
+        <TextBlock Name="EndDt" Text="" Margin="10" Foreground="RoyalBlue" FontSize="14" Grid.Row="3"/>
+        <TextBlock Name="Description" TextWrapping="Wrap" Foreground="RoyalBlue" Text="" FontSize="12" Margin="10" Grid.Row="4"/>
+        <TextBlock Name="Tag" Text="" Foreground="RoyalBlue" FontSize="14" Margin="10" Grid.Row="5"/>
+        <Button Content="Close" Width="120" Background="DeepPink" materialDesign:ButtonAssist.CornerRadius="0" Grid.Row="7" Click="BackButton_Click"/>
     </Grid>
 </Window>

@@ -190,6 +190,7 @@ namespace Planner
                     Button newButton = new Button();
                     newButton.Content = currentEvent.Name;
                     newButton.VerticalAlignment = VerticalAlignment.Top;
+                    newButton.Click += new RoutedEventHandler(ShowInfoButtonClick);
                     TimePad.Children.Add(newButton);
                     if ((int)currentEvent.StartDt.DayOfWeek == 0)
                     {
@@ -234,6 +235,22 @@ namespace Planner
                 CleanGrid();
                 FillEvents();
             }
+        }
+
+        private void ShowInfoButtonClick(object sender, RoutedEventArgs e)
+        {
+            List<Event> Events = plan.EventsList();
+            Event infoEvent = null;
+            foreach (Event currentEvent in Events)
+            {
+                if (((Button)e.OriginalSource).Content.ToString() == currentEvent.Name) 
+                {
+                    infoEvent = currentEvent;
+                }
+            }
+            var infoSession = new EventInfo(infoEvent);
+            infoSession.Show();
+
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)

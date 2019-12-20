@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Planner.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -17,9 +18,20 @@ namespace Planner.UI
     /// </summary>
     public partial class EventInfo : Window
     {
-        public EventInfo()
+
+        public EventInfo(Event currentEvent)
         {
             InitializeComponent();
+            Name.Text = currentEvent.Name;
+            BeginDt.Text = "From " + currentEvent.StartDt.ToString();
+            EndDt.Text = "To " + currentEvent.EndDt.ToString();
+            Description.Text = "Description: " + currentEvent.Description;
+            Tag.Text = "Tag: " + currentEvent.Tag;
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
