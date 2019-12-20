@@ -42,9 +42,8 @@ namespace Planner.UI
             //StartDt.AddDays(diffStart.TotalHours);
             //StartDt.AddHours(diffStart.TotalHours).AddMinutes(diffStart.Minutes);
 
-            DateTime EndDt = EndDayPicker.SelectedDate ?? DateTime.Today;
             DateTime EndT = EndTimePicker.SelectedTime ?? DateTime.Now;
-            DateTime End = new DateTime(EndDt.Year, EndDt.Month, EndDt.Day, EndT.Hour, EndT.Minute, EndT.Second);
+            DateTime End = new DateTime(StartDt.Year, StartDt.Month, StartDt.Day, StartDt.Hour, StartDt.Minute, StartDt.Second);
 
             //TimeSpan diffEnd = EndT.TimeOfDay - EndDt.TimeOfDay;
             //StartDt.AddDays(diffStart.TotalHours);
